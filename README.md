@@ -1,10 +1,10 @@
 # selinux_support-cookbook
 
-TODO: Enter the cookbook description here.
+This support cookbook for Selinux allows for the installation of policy modules via RPM.
 
 ## Supported Platforms
 
-TODO: List your supported platforms.
+RedHat platforms
 
 ## Attributes
 
@@ -16,10 +16,22 @@ TODO: List your supported platforms.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['selinux_support']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
+    <td><tt>['selinux_support']['policies']</tt></td>
+    <td>array</td>
+    <td>array of policies to include -must match recipe names i.e; ['nginx','uwsgi']</td>
+    <td><tt>[]</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['selinux_support']['package']['nginx']</tt></td>
+    <td>string</td>
+    <td>name of nginx policy rpm package</td>
+    <td><tt>nginx-policy</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['selinux_support']['package']['uwsgi']</tt></td>
+    <td>string</td>
+    <td>name of uwsgi policy rpm package</td>
+    <td><tt>uwsgi-policy</tt></td>
   </tr>
 </table>
 
@@ -39,4 +51,4 @@ Include `selinux_support` in your node's `run_list`:
 
 ## License and Authors
 
-Author:: YOUR_NAME (<YOUR_EMAIL>)
+Author:: daniel washko (<dwashko@gmti.gannett.com>)
